@@ -55,3 +55,16 @@ const posts = [
         "created": "2021-03-05"
     }
 ];
+
+posts.forEach((post) => {
+    
+    const id = post.id;
+    const content = post.content;
+    const media = post.media;
+    const author = post.author.name;
+    const image = post.author.image;
+    const likes = post.likes;
+    const created = post.created;
+   
+})
+
