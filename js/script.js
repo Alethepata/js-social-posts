@@ -1,3 +1,6 @@
+const container = document.getElementById('container');
+
+
 const posts = [
     {
         "id": 1,
@@ -57,7 +60,7 @@ const posts = [
 ];
 
 posts.forEach((post) => {
-    
+
     const id = post.id;
     const content = post.content;
     const media = post.media;
@@ -66,5 +69,36 @@ posts.forEach((post) => {
     const likes = post.likes;
     const created = post.created;
    
+container.innerHTML += 
+`<div class="post">
+ <div class="post__header">
+     <div class="post-meta">                    
+         <div class="post-meta__icon">
+             <img class="profile-pic" src="${image}" alt="${author}">                    
+         </div>
+         <div class="post-meta__data">
+             <div class="post-meta__author">${author}</div>
+             <div class="post-meta__time">${created}</div>
+         </div>                    
+     </div>
+ </div>
+ <div class="post__text">${content}</div>
+ <div class="post__image">
+     <img src="${media}" alt="">
+ </div>
+ <div class="post__footer">
+     <div class="likes js-likes">
+         <div class="likes__cta">
+             <a class="like-button  js-like-button" href="#" data-postid="${id}">
+                 <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
+                 <span class="like-button__label">Mi Piace</span>
+             </a>
+         </div>
+         <div class="likes__counter">
+             Piace a <b id="like-counter-${id}" class="js-likes-counter">${likes}</b> persone
+         </div>
+     </div> 
+ </div>            
+</div>`
 })
 
